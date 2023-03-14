@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Bayes' Theorem</title>
+</head>
+
+<body>
+    <h1>Bayes' Theorem</h1>
+    <form>
+        <label for="P(A)">P(A)</label>
+        <input type="text" id="P(A)" name="P(A)">
+        <label for="P(B)">P(B)</label>
+        <input type="text" id="P(B)" name="P(B)">
+        <label for="P(A|B)">P(A|B)</label>
+        <input type="text" id="P(A|B)" name="P(A|B)">
+        <input type="button" value="Calculate" onclick="bayes()">
+        <p id="result"></p>
+    </form>
+
+    <script>
+        function bayes() {
+            let P_A = document.getElementById('P(A)').value;
+            let P_B = document.getElementById('P(B)').value;
+            let P_A_given_B = document.getElementById('P(A|B)').value;
+            let result = P_A_given_B * P_B / P_A;
+            document.getElementById('result').innerHTML = result;
+        }
+    </script>
+</body>
+
+</html>
